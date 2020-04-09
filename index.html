@@ -1,0 +1,518 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>色碼電阻轉換器</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	    <link rel="shortcut icon" href="../web.ico">
+	    <link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body
+	<style>
+	    .a{
+            display: inline-block;
+            width: 10%;
+            height: 100%;
+            border: 0x solid red;
+            background-color:black;
+            }
+         .b {
+            display: inline-block;
+            width: 10%;
+            height: 100%;
+            border: 0x solid red;
+            background-color:black;
+             }
+          .c {
+            display: inline-block;
+            width: 10%;
+            height: 100%;
+            border: 0x solid red;
+            background-color:black;
+            }
+         .d {
+            display: inline-block;
+            width: 10%;
+            height: 100%;
+            border: 0x solid red;
+            background-color:Gold;
+            }
+        .a2, .b2, .c2,.d2 {
+            display: inline-block;
+            width: 10%;
+            height: 100%;
+            border: 0px solid red;
+            background-color:#FFAC55
+            }
+	 </style>
+     <div id="wrapper">
+	    <section id="intro" class="main">
+			<div style="text-align:center;width:100%;height:10%;">
+　               <div style="background-color:#FFAC55;width:300px;height:55px;margin:0 auto; border: 3px solid black">
+                    <div class='a1'></div>
+                    <div class='a1'></div>
+                    <div class='a'id='a' ></div>
+                    <div class='b2'></div>
+                    <div class='b'id='b' ></div>
+                    <div class='c2'></div>
+                    <div class='c'id='c'></div>
+                    <div class='d2'></div>
+                    <div class='d2'></div>
+                    <div class='d'id='d'></div> 
+　               </div>
+　               <h4>電阻值 :&nbsp<span id="value">0Ω±5%</span>&nbsp </h4>
+            </div>
+            <br>					    
+                <form action="#" method="post">
+                    <table border="0">
+                        <tr>
+                            <td>第一環</td>
+                            <td>第二環</td>
+                            <td>第三環 </td>
+                            <td>第四環 </td>
+                        </tr>
+                        <tr>
+                            <td>
+		                       <div align="center">
+	                                <button type="button" style="background-color:black;" onclick="one(0)">
+                                        <p style="color:white;">&nbsp 0 &nbsp</p>
+                                     </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div align="center">
+                                    <button type="button" style="background-color:black;" onclick="two(0)">
+                                        <p style="color:white;">&nbsp 0 &nbsp</p>
+                                    </button>
+                                </div>
+		                    </td>
+                            <td>
+	                            <div align="center">
+                                   <button type="button" style="background-color:black ;"onclick="thr(0)">
+                                        <p style="color:white;">&nbsp 1Ω &nbsp</p>
+                                   </button>
+	                            </div>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+		                        <div align="center">
+	                                <button type="button" style="background-color:SaddleBrown ;" onclick="one(1)">
+                                        <p style="color:white;">&nbsp 1 &nbsp</p>
+                                    </button>
+                                 </div>
+                            </td>
+                            <td>
+                                <div align="center">
+                                    <button type="button" style="background-color:SaddleBrown ;"onclick="two(1)">
+                                        <p style="color:white;">&nbsp 1 &nbsp</p>
+                                    </button>
+                                </div>
+		                    </td>
+                            <td>
+	                            <div align="center">
+                                    <button type="button" style="background-color:SaddleBrown ;"onclick="thr(1)">
+                                        <p style="color:white;">&nbsp 10Ω &nbsp</p>
+                                    </button>
+	                            </div>
+                            </td>
+                            <td>
+	                            <div align="center">
+                                    <button type="button" style="background-color:SaddleBrown;"onclick="four(1)">
+                                        <p style="color:white;">&nbsp ±1% &nbsp</p>
+                                    </button>
+	                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+		                        <div align="center">
+	                                <button type="button" style="background-color:red;" onclick="one(2)">
+                                        <p style="color:white;">&nbsp 2 &nbsp</p>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div align="center">
+                                    <button type="button" style="background-color:red ;" onclick="two(2)">
+                                        <p style="color:white;">&nbsp 2 &nbsp</p>
+                                     </button>
+                                 </div>
+		                    </td>
+                            <td>
+	                            <div align="center">
+                                    <button type="button" style="background-color:red;"onclick="thr(2)">
+                                        <p style="color:white;">&nbsp 100Ω &nbsp</p>
+                                    </button>
+	                            </div>
+                            </td>
+                            <td>
+	                            <div align="center">
+                                    <button type="button" style="background-color:red;" onclick="four(2)">
+                                        <p style="color:white;">&nbsp ±2% &nbsp</p>
+                                    </button>
+	                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+		                        <div align="center">
+	                                <button type="button" style="background-color:DarkOrange ;" onclick="one(3)">
+                                        <p style="color:white;">&nbsp 3 &nbsp</p>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div align="center">
+                                    <button type="button" style="background-color:DarkOrange ; "onclick="two(3)">
+                                        <p style="color:white;">&nbsp 3 &nbsp</p>
+                                    </button>
+                                </div>
+		</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:DarkOrange ;"onclick="thr(3)"><p style="color:white;">&nbsp 1kΩ &nbsp</p></button>
+	</div>
+</td>
+<td>
+	
+</td>
+</tr>
+<tr>
+<td>
+		<div align="center">
+	<button type="button" style="background-color:Yellow ;"onclick="one(4)"><p style="color:black;">&nbsp 4 &nbsp</p></button>
+        </div>
+</td>
+<td>
+<div align="center">
+     <button type="button" style="background-color:Yellow  ;"onclick="two(4)"><p style="color:black;">&nbsp 4 &nbsp</p></button>
+     </div>
+		</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:Yellow ;"onclick="thr(4)"><p style="color:black;">&nbsp 10kΩ &nbsp</p></button>
+	</div>
+</td>
+</tr>
+
+<tr>
+<td>
+		<div align="center">
+	<button type="button" style="background-color:YellowGreen ;"onclick="one(5)"><p style="color:white;">&nbsp 5 &nbsp</p></button>
+        </div>
+</td>
+<td>
+<div align="center">
+     <button type="button" style="background-color:YellowGreen  ;"onclick="two(5)"><p style="color:white;">&nbsp 5 &nbsp</p></button>
+     </div>
+		</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:YellowGreen ;"onclick="thr(5)"><p style="color:white;">&nbsp 100kΩ &nbsp</p></button>
+	</div>
+</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:YellowGreen  ;"onclick="four(5)"><p style="color:white;">&nbsp ±0.5% &nbsp</p></button>
+	</div>
+</td>
+</tr>
+
+<tr>
+<td>
+		<div align="center">
+	<button type="button" style="background-color:Navy  ;" onclick="one(6)"><p style="color:white;">&nbsp 6 &nbsp</p></button>
+        </div>
+</td>
+<td>
+<div align="center">
+     <button type="button" style="background-color:Navy   ;"onclick="two(6)"><p style="color:white;">&nbsp 6 &nbsp</p></button>
+     </div>
+		</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:Navy  ;"onclick="thr(6)"><p style="color:white;">&nbsp 1MΩ &nbsp</p></button>
+	</div>
+</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:Navy;"onclick="four(6)"><p style="color:white;">&nbsp ±0.25% &nbsp</p></button>
+	</div>
+</td>
+</tr>
+
+<tr>
+<td>
+		<div align="center">
+	<button type="button" style="background-color:RebeccaPurple;" onclick="one(7)"><p style="color:white;">&nbsp 7 &nbsp</p></button>
+        </div>
+</td>
+<td>
+<div align="center">
+     <button type="button" style="background-color:RebeccaPurple   ;"onclick="two(7)"><p style="color:white;">&nbsp 7 &nbsp</p></button>
+     </div>
+		</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:RebeccaPurple  ;"onclick="thr(7)"><p style="color:white;">&nbsp 10MΩ &nbsp</p></button>
+	</div>
+</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:RebeccaPurple;"onclick="four(7)"><p style="color:white;">&nbsp ±0.1% &nbsp</p></button>
+	</div>
+</td>
+</tr>
+
+<tr>
+<td>
+		<div align="center">
+	<button type="button" style="background-color:DarkGray;" onclick="one(8)"><p style="color:white;">&nbsp 8 &nbsp</p></button>
+        </div>
+</td>
+<td>
+<div align="center">
+     <button type="button" style="background-color:DarkGray   ;"onclick="two(8)"><p style="color:white;">&nbsp 8 &nbsp</p></button>
+     </div>
+		</td>
+<td>
+	
+</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:DarkGray  ;"onclick="four(8)"><p style="color:white;">&nbsp ±0.05% &nbsp</p></button>
+	</div>
+</td>
+</tr>
+
+<tr>
+<td>
+		<div align="center">
+	<button type="button" style="background-color:LightYellow;"onclick="one(9)"><p style="color:black;">&nbsp 9 &nbsp</p></button>
+        </div>
+</td>
+<td>
+<div align="center">
+     <button type="button" style="background-color:LightYellow  ;"onclick="two(9)"><p style="color:black;">&nbsp 9 &nbsp</p></button>
+     </div>
+		</td>
+<td>
+	<div align="center">
+   
+	</div>
+</td>
+<td>
+	<div align="center">
+  
+	</div>
+</td>
+</tr>
+
+<tr>
+<td>
+		<div align="center">
+	
+        </div>
+</td>
+<td>
+<div align="center">
+   
+     </div>
+		</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:Gold ;"onclick="thr(8)"><p style="color:black;">&nbsp 0.1 &nbsp</p></button>
+	</div>
+</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:Gold ;"onclick="four(10)"><p style="color:black;">&nbsp ±5% &nbsp</p></button>
+	</div>
+</td>
+</tr>
+
+<tr>
+<td>
+		<div align="center">
+
+        </div>
+</td>
+<td>
+<div align="center">
+    
+     </div>
+		</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:Gainsboro;" onclick="thr(9)"><p style="color:black;">&nbsp 0.01 &nbsp</p></button>
+	</div>
+</td>
+<td>
+	<div align="center">
+   <button type="button" style="background-color:Gainsboro;"onclick="four(11)"><p style="color:black;">&nbsp ±10% &nbsp</p></button>
+	</div>
+</td>
+</tr>
+</table>      
+	</body>
+</html>
+    <script>
+	     var one_num=0;
+	     var two_num=0;
+	     var three_num=0;
+	     var four_num="±5%";
+         function one(num){
+            var i= document.getElementById('a');
+                if(num==0){
+                    i.style.backgroundColor='black';
+                    one_num =0;
+                }else if(num==1){
+                    i.style.backgroundColor='SaddleBrown';
+                    one_num =1;
+                }else if(num==2){
+                    i.style.backgroundColor='red';
+                    one_num =2;
+                }else if(num==3){
+                    i.style.backgroundColor='DarkOrange';
+                    one_num =3;
+                }else if(num==4){
+                    i.style.backgroundColor='Yellow';
+                    one_num =4;
+                }else if(num==5){
+                    i.style.backgroundColor='YellowGreen';
+                    one_num =5;
+                }else if(num==6){
+                    i.style.backgroundColor='Navy';
+                    one_num =6;
+                }else if(num==7){
+                    i.style.backgroundColor='RebeccaPurple';
+                    one_num =7;
+                }else if(num==8){
+                    i.style.backgroundColor='DarkGray';
+                    one_num =8;
+                }else if(num==9){
+                    i.style.backgroundColor='LightYellow ';
+                    one_num =9;
+                }
+                add();
+            }
+function two(num)
+{
+   var j= document.getElementById('b');
+   if(num==0){
+       j.style.backgroundColor='black';
+       two_num=0;
+   }else if(num==1){
+       j.style.backgroundColor='SaddleBrown';
+       two_num=1;
+   }else if(num==2){
+       j.style.backgroundColor='red';
+       two_num=2;
+   }else if(num==3){
+       j.style.backgroundColor='DarkOrange';
+       two_num=3;
+   }else if(num==4){
+       j.style.backgroundColor='Yellow';
+       two_num=4;
+   }else if(num==5){
+       j.style.backgroundColor='YellowGreen';
+       two_num=5;
+   }else if(num==6){
+       j.style.backgroundColor='Navy';
+       two_num=6;
+   }else if(num==7){
+       j.style.backgroundColor='RebeccaPurple';
+       two_num=7;
+   }else if(num==8){
+       j.style.backgroundColor='DarkGray';
+       two_num=8;
+   }else if(num==9){
+       j.style.backgroundColor='LightYellow ';
+       two_num=9;
+   }
+   add();
+}
+function thr(num)
+{
+   var j= document.getElementById('c');
+   if(num==0){
+       j.style.backgroundColor='black';
+       three_num=1;
+   }else if(num==1){
+       j.style.backgroundColor='SaddleBrown';
+       three_num=10;
+   }else if(num==2){
+       j.style.backgroundColor='red';
+       three_num=100;
+   }else if(num==3){
+       j.style.backgroundColor='DarkOrange';
+       three_num=1000;
+   }else if(num==4){
+       j.style.backgroundColor='Yellow';
+       three_num=10000;
+   }else if(num==5){
+       j.style.backgroundColor='YellowGreen';
+       three_num=100000;
+   }else if(num==6){
+       j.style.backgroundColor='Navy';
+       three_num=1000000;
+   }else if(num==7){
+       j.style.backgroundColor='RebeccaPurple';
+       three_num=10000000;
+   }else if(num==8){
+       j.style.backgroundColor='Gold';
+       three_num=0.1;
+   }else if(num==9){
+       j.style.backgroundColor='Gainsboro ';
+       three_num=0.01;
+   }
+   add();
+}
+function four(num)
+{
+   var j= document.getElementById('d');
+   if(num==0){
+       j.style.backgroundColor='black';
+   }else if(num==1){
+       j.style.backgroundColor='SaddleBrown';
+       four_num="±1%";
+   }else if(num==2){
+       j.style.backgroundColor='red';
+       four_num="±2%";
+   }else if(num==5){
+       j.style.backgroundColor='YellowGreen';
+       four_num="±0.5%";
+   }else if(num==6){
+       j.style.backgroundColor='Navy';
+       four_num="±0.25%";
+   }else if(num==7){
+       j.style.backgroundColor='RebeccaPurple';
+       four_num="±0.1%";
+   }else if(num==8){
+       j.style.backgroundColor='DarkGray';
+       four_num="±0.05%";
+   }else if(num==10){
+       j.style.backgroundColor='Gold';
+       four_num="±5%";
+   }else if(num==11){
+       j.style.backgroundColor='Gainsboro';
+       four_num="±10%";
+   }
+   add();
+}
+
+function add() {
+     var sum = (one_num*10+two_num)*three_num;
+     if(sum<1000){
+         document.getElementById("value").innerHTML=sum+'Ω'+four_num;
+     }else if(sum>=1000&&sum<1000000){
+        sum=sum/1000; 
+      document.getElementById("value").innerHTML=sum+'K'+'Ω'+four_num;
+     }else if(sum>1000000){
+         sum=sum/1000000;
+         document.getElementById("value").innerHTML=sum+'M'+'Ω'+four_num;
+     }
+}
+</script>
